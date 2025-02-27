@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', URL: 'https://github.com/Joonaron/InClassAssignment2.git'
+                git branch: 'main', url: 'https://github.com/Joonaron/InClassAssignment2.git'
             }
         }
         stage('Build') {
