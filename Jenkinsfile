@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools{
+        maven 'MVN'
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -8,17 +11,17 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'clean install'
+                sh 'mvn clean install'
             }
         }
         stage('Test') {
             steps {
-                sh 'test'
+                sh 'mvn test'
             }
         }
         stage('Code Coverage') {
             steps {
-                sh ' jacoco:report'
+                sh ' mvn jacoco:report'
             }
         }
         stage('Publish Test Results') {
