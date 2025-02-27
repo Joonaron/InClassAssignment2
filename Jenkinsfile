@@ -3,22 +3,22 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Joonaron/InClassAssignment2.git'
+                git branch: 'main', URL: 'https://github.com/Joonaron/InClassAssignment2.git'
             }
         }
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                sh 'clean install'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh 'test'
             }
         }
         stage('Code Coverage') {
             steps {
-                sh 'mvn jacoco:report'
+                sh ' jacoco:report'
             }
         }
         stage('Publish Test Results') {
