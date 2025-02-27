@@ -41,7 +41,6 @@
                 <configuration>
                     <release>17</release>
                     <compilerArgs>
-                        <arg>--enable-preview</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
